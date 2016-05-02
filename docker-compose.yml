@@ -1,0 +1,23 @@
+nginx:
+    build: ./nginx
+    links:
+        - hume1:hume1
+        - hume2:hume2
+        - hume3:hume3
+    ports:
+        - "80:80"
+
+hume1:
+    build: ./app
+    ports:
+        - "8000"
+
+hume2:
+    build: ./app
+    ports:
+        - "8000"
+
+hume3:
+    build: ./app
+    ports:
+       - "8000"
